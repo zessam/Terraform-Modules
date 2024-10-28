@@ -23,23 +23,22 @@ module "vpc-flow-logs-s3-bucket" {
 }
 
 module "subnets" {
-  source               = "cloudposse/dynamic-subnets/aws"
-  version              = "2.4.2"
-  namespace            = var.namespace
-  stage                = var.stage
-  name                 = var.name
-  tags                 = var.tags
-  vpc_id               = module.vpc.vpc_id
-  igw_id               = module.vpc.igw_id
-  ipv4_cidr_block      = module.vpc.vpc_cidr_block
-  availability_zones   = local.zones
-  nat_gateway_enabled  = true
-  nat_instance_enabled = false
-
+  source                            = "cloudposse/dynamic-subnets/aws"
+  version                           = "2.4.2"
+  namespace                         = var.namespace
+  stage                             = var.stage
+  name                              = var.name
+  tags                              = var.tags
+  vpc_id                            = module.vpc.vpc_id
+  igw_id                            = [module.vpc.igw_id]         # Wrap in brackets to make it a list
+  ipv4_cidr_block                   = [module.vpc.vpc_cidr_block] # Wrap in brackets to make it a list
+  availability_zones                = local.zones
+  max_subnet_count                  = 2 # Maximum of 2 subnets per availability zone
+  nat_gateway_enabled               = true
+  nat_instance_enabled              = false
   availability_zone_attribute_style = var.az_code
-
-
 }
+
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "default" {
   count = var.transit_gateway_id != "" ? 1 : 0
