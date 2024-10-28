@@ -5,7 +5,7 @@ module "vpc" {
   namespace                        = var.namespace
   stage                            = var.stage
   tags                             = var.tags
-  ipv4_primary_cidr_block          = var.vpc_cidr
+  ipv4_primary_cidr_block          = var.ipv4_primary_cidr_block
   assign_generated_ipv6_cidr_block = var.assign_generated_ipv6_cidr_block
 
 
