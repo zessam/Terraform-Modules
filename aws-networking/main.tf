@@ -30,7 +30,6 @@ module "subnets" {
 
   vpc_id                             = module.vpc.vpc_id
   igw_id                             = module.vpc.igw_id
-  cidr_block                         = var.vpc_cidr
   availability_zones                 = local.zones
   availability_zone_attribute_style  = var.az_code
 
