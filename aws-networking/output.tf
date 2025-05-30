@@ -38,10 +38,7 @@ output "vpc_ipv6_association_id" {
   description = "The association ID for the IPv6 CIDR block"
 }
 
-output "ipv6_cidr_block" {
-  value       = module.vpc.ipv6_cidr_block
-  description = "The IPv6 CIDR block"
-}
+
 
 output "public_subnet_ids" {
   description = "IDs of the created public subnets"
