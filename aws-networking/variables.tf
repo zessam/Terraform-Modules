@@ -28,7 +28,7 @@ variable "enable_default_security_group_with_custom_rules" {
 variable "vpc_flow_logs_enabled" {
   description = "Option whether to enable vpc flow logs"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "vpc_flow_logs_interval" {
@@ -43,7 +43,11 @@ variable "vpc_zones" {
   default     = 3
 }
 
-
+variable "transit_gateway_id" {
+  description = "Identifier of EC2 Transit Gateway"
+  type        = string
+  default     = ""
+}
 
 variable "tags" {
   description = "Additional tags (e.g. `map('BusinessUnit`,`XYZ`)"
