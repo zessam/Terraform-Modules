@@ -56,3 +56,10 @@ variable "az_code" {
   type        = string
   default     = "full"
 }
+
+
+variable "enable_default_security_group_with_custom_rules" {
+  description = "Whether to enable default security group with custom rules"
+  type        = bool
+  default     = false
+}
