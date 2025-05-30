@@ -27,7 +27,7 @@ module "subnets" {
   tags       = var.tags
 
   vpc_id                             = module.vpc.vpc_id
-  igw_id                             = module.vpc.igw_id
+  igw_id                             = [module.vpc.igw_id]
   availability_zones                 = local.zones
   availability_zone_attribute_style  = var.az_code
 
