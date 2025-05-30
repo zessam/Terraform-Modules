@@ -19,11 +19,7 @@ variable "vpc_cidr" {
   type        = string
 }
 
-variable "enable_default_security_group_with_custom_rules" {
-  type        = bool
-  description = "A boolean flag to enable/disable custom and restrictive inbound/outbound rules for the default VPC's SG"
-  default     = false
-}
+
 
 variable "vpc_flow_logs_enabled" {
   description = "Option whether to enable vpc flow logs"

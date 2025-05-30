@@ -15,9 +15,7 @@ module "vpc" {
   ipv4_primary_cidr_block = var.vpc_cidr
 
   assign_generated_ipv6_cidr_block                    = false
-  enable_dns_hostnames                                = true
-  enable_dns_support                                  = true
-  enable_default_security_group_with_custom_rules     = var.enable_default_security_group_with_custom_rules
+
 }
 
 module "subnets" {
