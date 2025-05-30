@@ -11,7 +11,7 @@ module "vpc" {
     stage     = var.stage
     name      = var.name
     tags      = var.tags
-    vpc_cidr_block = var.vpc_cidr
+    cidr_block = var.vpc_cidr
 
 
     enable_default_security_group_with_custom_rules = var.enable_default_security_group_with_custom_rules
