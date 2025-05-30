@@ -32,15 +32,3 @@ module "subnets" {
     availability_zone_attribute_style = var.az_code
 }
 
-
-# resource "aws_ec2_transit_gateway_vpc_attachment" "default" {
-#   count = var.transit_gateway_id != "" ? 1 : 0
-
-#   vpc_id             = module.vpc.vpc_id
-#   subnet_ids         = module.subnets.private_subnet_ids
-#   transit_gateway_id = var.transit_gateway_id
-
-#   transit_gateway_default_route_table_association = true
-#   transit_gateway_default_route_table_propagation = true
-# }
-
